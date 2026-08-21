@@ -7,18 +7,21 @@ public class Main {
         list.append(20);
         list.append(30);
 
-        list.printlist();
+        // list.printlist();
 
-        list.removeLast();
-        list.printlist();
+        // list.removeLast();
+        // list.printlist();
 
-        list.removeLast();
-        list.printlist();
+        // list.removeLast();
+        // list.printlist();
 
-        list.removeLast();
-        list.printlist();
+        // list.removeLast();
+        // list.printlist();
 
-        list.removeLast(); // empty list — should not crash
+        // list.removeLast(); // empty list — should not crash
+        // list.printlist();
+
+        list.reverse();
         list.printlist();
     }
 }

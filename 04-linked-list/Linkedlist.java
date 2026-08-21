@@ -87,12 +87,65 @@ class Linkedlist {
 
 
     public Node removefrist(){
-        if(length==0){
+        if(length==0){ // if the list is empty we just return null 
             return null;
         }
-
-        Node next=head.next;
+        Node temp=head;
         head=head.next;
-        next=head;
+        temp.next=null;
+        length--;
+        if(length==0){ // if list length become zero make tail null (edge case )
+            tail=null;
+        }
+        return temp;
+    }
+
+    public Node get(int index){
+        if(length==0 || index >= length) return null;
+        if(index==0){
+            return head;
+        }
+        if(index==length){
+            return tail;
+        }
+        Node temp=head;
+        for(int i=0;i<length;i++){
+            temp=temp.next;
+        }
+        return temp;
+    }
+    public void remove(int index){
+        if(index<0 || index >=length) return ;
+        if(index==0){
+            removefrist();
+        }
+        if(index==length-1){
+            removeLast();
+        }
+        Node temp=head;
+        Node pre=head;
+
+        for(int i=0;i<index;i++){
+            pre=temp;
+            temp=temp.next;
+        }
+
+        pre.next=temp.next;
+        temp.next=null;
+        length--;
+    }
+
+    public void reverse(){
+        Node temp=head; // start at old head 
+        head =tail; // swap head and tail 
+        tail=temp;
+        Node after=temp.next; //  variable for a next node after temp
+        Node before=null; // before temp
+        for(int i=0;i<length;i++){
+            after=temp.next; // save next node before brakingk link 
+            temp.next=before;// point temp.next to before which is in reverse direction 
+            before=temp;// move this three variables ahead and do it until all linked list becomes reverse 
+            temp=after;
+        }
     }
 }
