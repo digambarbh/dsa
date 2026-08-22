@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) {
 
-        Linkedlist list = new Linkedlist(4);
+        Linkedlist list = new Linkedlist(1);
 
-        list.append(10);
-        list.append(20);
-        list.append(30);
+        list.append(1);
+        list.append(1);
+        list.append(0);
 
         // list.printlist();
 
@@ -23,5 +23,8 @@ public class Main {
 
         list.reverse();
         list.printlist();
+
+        list.findNOde(2);
+        list.binaryToDecimal();
     }
 }

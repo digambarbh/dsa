@@ -148,4 +148,50 @@ class Linkedlist {
             temp=after;
         }
     }
+
+
+    public void findNOde(int k){
+
+        Node slow=head;
+        Node fast=head;
+        for(int i=0;i<k;i++){
+            if(fast==null){
+                return;
+            }
+            fast=fast.next;
+        }
+
+        while(fast!=null){
+            fast=fast.next;
+            slow=slow.next;
+        }
+
+        System.out.println(k+"th node is "+slow.data);
+
+    }
+
+   public void binaryToDecimal() {
+
+    Node temp = head;
+
+    int position = length - 1;
+    int decimal = 0;
+
+    while (temp != null) {
+
+        if (temp.data != 0 && temp.data != 1) {
+            System.out.println(
+                temp.data + " is not a binary digit. Binary contains only 0 and 1."
+            );
+            return;
+        }
+
+        decimal = decimal +(temp.data * (int) Math.pow(2, position));
+
+        temp = temp.next;
+        position--;
+    }
+
+    System.out.println("Decimal number for given binary is " + decimal);
+}
 }
